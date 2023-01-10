@@ -1,0 +1,59 @@
+{
+  "name": "Odigos",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "favicon": "/favicon.png",
+  "colors": {
+    "primary": "#30638E",
+    "light": "#C0E0DE",
+    "dark": "#123C60",
+    "anchors": {
+      "from": "#264F71",
+      "to": "#476987"
+    }
+  },
+  "topbarCtaButton": {
+    "type": "github",
+    "url": "https://github.com/keyval-dev/odigos"
+  },
+  "anchors": [
+    {
+      "name": "Demo",
+      "icon": "circle-play",
+      "url": "https://www.youtube.com/watch?v=9d36AmVtuGU"
+    },
+    {
+      "name": "Blog",
+      "icon": "newspaper",
+      "url": "https://odigos.io/blog"
+    },
+    {
+      "name": "Community",
+      "icon": "comments",
+      "url": "https://odigos.io/community"
+    }
+  ],
+  "navigation": [
+    {
+      "group": "Documentation",
+      "pages": [
+        "overview",
+        "getting-started",
+        "architecture",
+        "telemetry-types",
+        "custom-resources",
+        {
+          "group": "Contribution Guidelines",
+          "pages": ["contribution-guidelines"]
+        }
+      ]
+    }
+  ],
+  "footerSocials": {
+    "twitter": "https://twitter.com/odigosio",
+    "github": "https://github.com/keyval-dev/odigos",
+    "slack": "https://odigos.slack.com/join/shared_invite/zt-1d7egaz29-Rwv2T8kyzc3mWP8qKobz~A#/shared-invite/email"
+  }
+}
