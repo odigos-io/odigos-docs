@@ -44,7 +44,24 @@
         "installation",
         {
           "group": "Observability Backends",
-          "pages": ["backends/datadog"]
+          "pages": [
+            "backends/datadog",
+            "backends/prometheus",
+            "backends/tempo",
+            "backends/grafanacloud",
+            "backends/googlecloud",
+            "backends/honeycomb",
+            "backends/newrelic",
+            "backends/splunk",
+            "backends/logzio",
+            "backends/qryn",
+            "backends/opsverse",
+            "backends/lightstep",
+            "backends/jaeger",
+            "backends/loki",
+            "backends/signoz",
+            "backends/opentelemetry"
+          ]
         },
         "cleanup"
       ]
