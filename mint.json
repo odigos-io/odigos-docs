@@ -37,17 +37,16 @@
   ],
   "navigation": [
     {
-      "group": "Documentation",
+      "group": "Getting Started",
       "pages": [
-        "overview",
-        "getting-started",
-        "architecture",
-        "telemetry-types",
-        "custom-resources",
+        "intro",
+        "prerequisites",
+        "installation",
         {
-          "group": "Contribution Guidelines",
-          "pages": ["contribution-guidelines"]
-        }
+          "group": "Observability Backends",
+          "pages": ["backends/datadog"]
+        },
+        "cleanup"
       ]
     }
   ],

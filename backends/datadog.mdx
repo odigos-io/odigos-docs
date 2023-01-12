@@ -1,0 +1,38 @@
+---
+title: "Datadog"
+---
+
+On the next page, select Datadog as the destination for the data. You will be
+required to fill in the following information:
+
+- **Name**: some unique name for the destination.
+- **Site**: This is the domain used for your datadog account, in our exaple it
+  is us5.datadoghq.com. (list of available sites)
+- **API Key**: The api key created in the previous step.
+
+## Generating data
+
+That’s it! Odigos will automatically do the following:
+
+- Instrument all the applications in the cluster:
+  - Runtime langauges will be instrumented using OpenTelemetry instrumentation.
+  - Compiled languages will be instrumented using eBPF.
+- Deploy and configure a collector to send the data to Datadog.
+
+Now all that is left is to generate some traffic in the application. Execute the
+following command to port forward into the application UI:
+
+```
+kubectl port-forward svc/frontend 1234:80 -n default
+```
+
+Navigate to http://localhost:1234 and perform some purchases.
+
+## Exploring the collected data
+
+In a few minutes, you should see distributed traces in Datadog APM. You now have
+all the data needed to understand how your application is behaving, without
+having to do any additional work.
+
+Any new application deployed to this Kubernetes cluster will automatically be
+instrumented and sent to Datadog.

@@ -1,0 +1,41 @@
+---
+title: "Prerequisites"
+description:
+  "In this tutorial we are going to use Odigos for generating distributed traces,
+  metrics and logs for a microservices-based application written in Go, Java, Python, .NET
+  and Node.js."
+---
+
+To follow the guide, you need the following:
+
+- **A Kubernetes cluster**. We recommend [kind](https://kind.sigs.k8s.io/) for trying Odigos out
+  in a local development environment.
+- **[Helm CLI](https://helm.sh)**. We are going to install Odigos using a helm chart.
+- **A Datadog account with API key**. Go to Datadog website to create a new free
+  account. In addition, create a new API key by navigating to Organization
+  settings, then click on API keys, and create a new key.
+
+## Creating the Kubernetes cluster
+
+Create a new local Kubernetes cluster, by running the following command:
+
+```bash
+kind create cluster
+```
+
+## Deploying the target application
+
+We are going to install a fork of
+[microservices-demo](https://github.com/keyval-dev/microservices-demo), an
+example of e-commerce application created by Google. We use a modified version
+**without any instrumentation code** to demonstrate how Odigos automatically
+collects observability data from the application.
+
+Deploy the application using the following command:
+
+```bash
+kubectl apply -f https://raw.githubusercontent.com/keyval-dev/microservices-demo/master/release/kubernetes-manifests.yaml
+```
+
+Before moving to the next step, make sure that all the application pods are
+running (may take a few moments).

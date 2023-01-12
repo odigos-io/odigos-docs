@@ -1,0 +1,56 @@
+---
+title: "Installation"
+sidebarTitle: "Installation"
+---
+
+## Installing Odigos
+
+The easiest way to install Odigos is to use the helm chart:
+
+```bash
+helm repo add odigos https://keyval-dev.github.io/odigos-charts/
+helm install my-odigos odigos/odigos --namespace odigos-system --create-namespace
+```
+
+After all the pods in the odigos-system namespace are running, open the Odigos
+UI by running the following command:
+
+```bash
+kubectl port-forward svc/odigos-ui 3000:3000 -n odigos-system
+```
+
+And navigate to http://localhost:3000
+
+## Choosing target applications
+
+You should now see the following page:
+
+![](/images/setup_page.png)
+
+After Odigos detected all the applications in the cluster, choose the opt out
+option for applications instrumentation. Opt in mode is recommended when you
+want to have greater control over which applications are instrumented.
+
+## Choosing observability backend
+
+Odigos supports all the major observability backends, both open-source and commercial.
+Select the relevant backend for your use case below to connect it to Odigos.
+
+<CardGroup cols={4}>
+  <Card title="Datadog" href="/backends/datadog" />
+  <Card title="Honeycomb" href="/getting-started" />
+  <Card title="Splunk" href="/getting-started" />
+  <Card title="Grafana Cloud" href="/getting-started" />
+  <Card title="Google Cloud" href="/getting-started" />
+  <Card title="New Relic" href="/getting-started" />
+  <Card title="Logz.io" href="/getting-started" />
+  <Card title="Prometheus" href="/getting-started" />
+  <Card title="Tempo" href="/getting-started" />
+  <Card title="Loki" href="/getting-started" />
+  <Card title="Jaeger" href="/getting-started" />
+  <Card title="SigNoz" href="/getting-started" />
+  <Card title="Qryn" href="/getting-started" />
+  <Card title="Lightstep" href="/getting-started" />
+  <Card title="OpsVerse" href="/getting-started" />
+  <Card title="OpenTelemetry" href="/getting-started" />
+</CardGroup>
