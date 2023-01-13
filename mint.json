@@ -27,12 +27,7 @@
     {
       "name": "Blog",
       "icon": "newspaper",
-      "url": "https://odigos.io/blog"
-    },
-    {
-      "name": "Community",
-      "icon": "comments",
-      "url": "https://odigos.io/community"
+      "url": "https://keyval.dev/blog/"
     }
   ],
   "navigation": [
@@ -65,6 +60,14 @@
         },
         "cleanup"
       ]
+    },
+    {
+      "group": "Concepts",
+      "pages": ["architecture", "telemetry-types", "custom-resources"]
+    },
+    {
+      "group": "Contibution Guidelines",
+      "pages": ["adding-new-dest"]
     }
   ],
   "footerSocials": {
