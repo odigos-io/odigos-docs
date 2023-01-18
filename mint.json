@@ -63,7 +63,12 @@
     },
     {
       "group": "Concepts",
-      "pages": ["architecture", "telemetry-types", "custom-resources"]
+      "pages": [
+        "architecture",
+        "telemetry-types",
+        "custom-resources",
+        "uninstall"
+      ]
     },
     {
       "group": "Contibution Guidelines",
