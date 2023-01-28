@@ -67,7 +67,8 @@
         "architecture",
         "telemetry-types",
         "custom-resources",
-        "uninstall"
+        "uninstall",
+        "usage-reports"
       ]
     },
     {
