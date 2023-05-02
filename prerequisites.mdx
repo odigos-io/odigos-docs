@@ -9,7 +9,9 @@ description:
 To follow the guide, you need the following:
 
 - **A Kubernetes cluster**. We recommend [kind](https://kind.sigs.k8s.io/) for trying Odigos out
-  in a local development environment.
+  in a local development environment
+  
+  Mac users: please avoid using Docker Desktop built-in Kubernetes cluster as it [does not](https://docs.docker.com/storage/bind-mounts/#configure-bind-propagation) support bind propagation.
 - **[Helm CLI](https://helm.sh)**. We are going to install Odigos using a helm chart.
 
 ## Creating the Kubernetes cluster
