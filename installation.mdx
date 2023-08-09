@@ -2,11 +2,34 @@
 title: "Installation"
 sidebarTitle: "Installation"
 ---
+Odigos can be installed either by using the Odigos CLI or by installing a helm chart.
 
-## Installing Odigos
+<Tabs>
+  <Tab title="CLI (recommended)">
+    Download the latest version of the Odigos CLI from the [releases page]()
 
-The easiest way to install Odigos is to use the helm chart:
+    ### MacOS (x86_64)
+    ```bash
+    curl -L 
+    ```
 
+    ### MacOS (Apple Silicon)
+    ```bash
+    curl -L 
+    ```
+
+    ### Linux (x86_64)
+    ```bash
+    curl -L 
+    ```
+
+    ### Linux (ARM64)
+    ```bash
+    curl -L 
+    ```
+
+  </Tab>
+  <Tab title="Helm">
 ```bash
 helm repo add odigos https://keyval-dev.github.io/odigos-charts/
 helm install my-odigos odigos/odigos --namespace odigos-system --create-namespace
@@ -20,6 +43,9 @@ kubectl port-forward svc/odigos-ui 3000:3000 -n odigos-system
 ```
 
 And navigate to http://localhost:3000
+  </Tab>
+</Tabs>
+
 
 ## Choosing target applications
 
