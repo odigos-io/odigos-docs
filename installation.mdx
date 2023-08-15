@@ -24,7 +24,9 @@ kubectl get pods -n odigos-system
 
 All pods should have `STATUS` of "Running".
 
-And then ... [Fill instructions for CLI]
+## Configuring Odigos
+
+TODO: add instructions on how to run from CLI.
 
 ## Choosing Sources
 
@@ -39,7 +41,7 @@ automatically added to your application by odigos without any manual interventio
 
 Odigos leverages the [OpenTelemetry](https://opentelemetry.io/) project for that.
 
-[TODO: add new UI screen and instructions on how to run it]
+[](/images/odigos-sources.png)
 
 After Odigos detected all the applications in the cluster, choose the opt out
 option for applications instrumentation. Opt in mode is recommended when you
@@ -58,6 +60,8 @@ Odigos supports multiple destinations at the same time, so you can:
 
 1. send the same telemetry data to multiple backends for evaluation and comparison.
 2. send different telemetry signals (traces, metrics and logs) to different backends depending on your use case.
+
+[]
 
 <Check>
   **That's the last step!**. Within a few minutes, you should see your
