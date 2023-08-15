@@ -1,38 +1,35 @@
 ---
-title: "Telemetry Types"
+title: "Telemetry Signals"
 ---
 
-Odigos supports the producing and correlation of the following telemetry types:
+Odigos, like OpenTelemetry supports the producing and correlation of the following telemetry signals:
 
 - Distributed traces
 - Metrics
 - Logs
 
-For a telemetry type to be collected, a destination that accepts it must be
-configured. In addition, users can enable or disable the collection of a
-telemetry type on a per-application basis. If none of the applications are
-configured to collect a telemetry type, the telemetry type will not be
-collected.
+## Distributed Traces
 
-## Traces
+Distributed trace is a collection of **span**s that describe the execution of a
+single request or transaction in your system.
+Each span represents a single operation in the handling of the request.
 
-Distributed traces collected by Odigos will automatically include spans for
-popular open source projects such as HTTP clients and servers, gRPC clients and
-servers, Database clients, and many more.
-
-In addition, users can enrich their distributed traces with manually created
-spans by using the relevant
-[OpenTelemetry APIs](https://opentelemetry.io/docs/instrumentation/).
+Odigos will automatically record spans that describe operations
+for popular packages such as HTTP frameworks, gRPC clients and
+servers, Database clients, messaging SDKs and many more.
 
 The collection of traces is achieved by combining two open source technologies:
 
 - OpenTelemetry for languages with JIT compilation such as Python, Java,.NET and
-  Javascript.
+  Javascript. Users can enrich their distributed traces with manually created
+  spans by using the relevant
+  [OpenTelemetry APIs](https://opentelemetry.io/docs/instrumentation/).
+
 - eBPF for compiled languages such as Go.
 
-Being based on popular open-source standards allows Odigos to automatically
-support a huge number of libraries and frameworks. Below is a list of supported
-libraries for every language:
+Being based on OpenTelemetry which is a popular open-source standards,
+allows Odigos to automatically support a huge number of libraries and frameworks.
+Below is a list of supported libraries for every language:
 
 - [Java](https://github.com/open-telemetry/opentelemetry-java-instrumentation/tree/main/instrumentation)
 - [Python](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/main/instrumentation)
@@ -74,7 +71,7 @@ Host-related metrics are collected via the
 
 ## Logs
 
-Currently, Odigos will ship logs written by the application to the stdout or
+Currently, Odigos will export logs written by the application to the stdout or
 stderr of the process. Correlation to other telemetry types will be done
 according to timestamp and resource.
 
