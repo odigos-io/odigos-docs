@@ -22,6 +22,8 @@ Wait until all the pods in the odigos-system namespace are running:
 kubectl get pods -n odigos-system
 ```
 
+All pods should have `STATUS` of "Running".
+
 And then ... [Fill instructions for CLI]
 
 ## Choosing Sources
@@ -31,7 +33,7 @@ Odigos automatically detects all the applications running in the cluster and
 you can choose which applications you want to instrument and use as sources for telemetry.
 
 Instrumentation is the process of adding code to your application to collect
-telemetry data - traces, metrics and logs.
+telemetry signals - traces, metrics and logs.
 Odigos supports automatic instrumentation which means the changes are
 automatically added to your application by odigos without any manual intervention.
 
