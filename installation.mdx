@@ -41,11 +41,23 @@ automatically added to your application by odigos without any manual interventio
 
 Odigos leverages the [OpenTelemetry](https://opentelemetry.io/) project for that.
 
-[](/images/odigos-sources.png)
+![](/images/setup_sources.png)
 
-After Odigos detected all the applications in the cluster, choose the opt out
-option for applications instrumentation. Opt in mode is recommended when you
-want to have greater control over which applications are instrumented.
+After Odigos detected all the applications in the cluster, configure:
+
+### Opt In / Opt Out
+
+Use the `Apply for any future apps` for every namespace.
+
+If the checkbox is **unchecked**, then new applications in the namespace will not be instrumented automatically.
+To add them as sources, you will need to manually select them in the UI.
+Opt in mode is recommended when you want to have greater control over which applications are instrumented.
+
+When the checkbox is **checked**, then new applications in the namespace will be instrumented automatically.
+
+### Application Instrumentation
+
+From the applications list, you can manually select which applications you want to instrument.
 
 ## Choosing Destination
 
@@ -61,7 +73,7 @@ Odigos supports multiple destinations at the same time, so you can:
 1. send the same telemetry data to multiple backends for evaluation and comparison.
 2. send different telemetry signals (traces, metrics and logs) to different backends depending on your use case.
 
-[]
+![](/images/setup_destinations.png)
 
 <Check>
   **That's the last step!**. Within a few minutes, you should see your
