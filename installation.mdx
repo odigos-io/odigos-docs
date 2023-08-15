@@ -1,40 +1,61 @@
 ---
 title: "Installation"
 sidebarTitle: "Installation"
+description:
+  "This section desribes how to add odigos to an existing kubernetes cluster.
+  You can install it in a demo cluster like the one we setup in the previous section 'Local Demo' of the docs,
+  or your own cluster (production, staging, etc)."
 ---
 
 ## Installing Odigos
 
-The easiest way to install Odigos is to use the helm chart:
+Install Odigos using helm chart:
 
 ```bash
 helm repo add odigos https://keyval-dev.github.io/odigos-charts/
 helm install my-odigos odigos/odigos --namespace odigos-system --create-namespace
 ```
 
-After all the pods in the odigos-system namespace are running, open the Odigos
-UI by running the following command:
+Wait until all the pods in the odigos-system namespace are running:
 
 ```bash
-kubectl port-forward svc/odigos-ui 3000:3000 -n odigos-system
+kubectl get pods -n odigos-system
 ```
 
-And navigate to http://localhost:3000
+And then ... [Fill instructions for CLI]
 
-## Choosing target applications
+## Choosing Sources
 
-You should now see the following page:
+Sources in odigos are **your** services which are running on pods in the cluster.
+Odigos automatically detects all the applications running in the cluster and
+you can choose which applications you want to instrument and use as sources for telemetry.
 
-![](/images/setup_page.png)
+Instrumentation is the process of adding code to your application to collect
+telemetry data - traces, metrics and logs.
+Odigos supports automatic instrumentation which means the changes are
+automatically added to your application by odigos without any manual intervention.
+
+Odigos leverages the [OpenTelemetry](https://opentelemetry.io/) project for that.
+
+[TODO: add new UI screen and instructions on how to run it]
 
 After Odigos detected all the applications in the cluster, choose the opt out
 option for applications instrumentation. Opt in mode is recommended when you
 want to have greater control over which applications are instrumented.
 
-## Choosing observability backend
+## Choosing Destination
+
+After telemetry data is collected from your sources, it needs to be sent
+to a backend for processing, storage and visualization.
+Destination in odigos is a backend where you want to send the telemetry data.
 
 Odigos supports all the major observability backends, both open-source and commercial.
 Select the relevant backend for your use case below to connect it to Odigos.
+
+Odigos supports multiple destinations at the same time, so you can:
+
+1. send the same telemetry data to multiple backends for evaluation and comparison.
+2. send different telemetry signals (traces, metrics and logs) to different backends depending on your use case.
 
 <Check>
   **That's the last step!**. Within a few minutes, you should see your
