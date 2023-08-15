@@ -24,8 +24,6 @@ mintlify dev
 
 Changes will be deployed to production automatically after pushing to the default branch.
 
-You can also preview changes using PRs, which generates a preview link of the docs.
-
 #### Troubleshooting
 
 - Mintlify dev isn't running - Run `mintlify install` it'll re-install dependencies.

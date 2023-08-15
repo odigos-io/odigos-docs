@@ -1,8 +1,8 @@
 ---
-title: "Prerequisites"
+title: "Local Demo"
 description:
   "In this tutorial we are going to use Odigos for generating distributed traces,
-  metrics and logs for a microservices-based application written in Go, Java, Python, .NET
+  metrics and logs for a demo microservices-based application written in Go, Java, Python, .NET
   and Node.js."
 ---
 
@@ -10,13 +10,14 @@ To follow the guide, you need the following:
 
 - **A Kubernetes cluster**. We recommend [kind](https://kind.sigs.k8s.io/) for trying Odigos out
   in a local development environment
-  
+
   Mac users: please avoid using Docker Desktop built-in Kubernetes cluster as it [does not](https://docs.docker.com/storage/bind-mounts/#configure-bind-propagation) support bind propagation.
+
 - **[Helm CLI](https://helm.sh)**. We are going to install Odigos using a helm chart.
 
-## Creating the Kubernetes cluster
+## Creating the Local Kubernetes cluster
 
-Create a new local Kubernetes cluster, by running the following command:
+If you choose to use `kind`, create a new local Kubernetes cluster, by running the following command:
 
 ```bash
 kind create cluster
@@ -36,5 +37,15 @@ Deploy the application using the following command:
 kubectl apply -f https://raw.githubusercontent.com/keyval-dev/microservices-demo/master/release/kubernetes-manifests.yaml
 ```
 
-Before moving to the next step, make sure that all the application pods are
-running (may take a few moments).
+## Target Application Health
+
+1. Make sure that all the application pods are running (may take a few moments): `kubectl get pods` and check that all pods `STATUS` is "Running".
+
+2. To view the UI of the demo e-commerce application which you just installed by executing
+
+```sh
+kubectl port-forward svc/frontend 3001:80 -n default
+```
+
+and then open [http://localhost:3001](http://localhost:3001) in your browser. You should see the
+application homepage and be able to interact with it.
