@@ -34,35 +34,42 @@
     {
       "group": "Getting Started",
       "pages": [
-        "intro",
-        "prerequisites",
-        "installation",
+        "overview",
         {
-          "group": "Observability Backends",
+          "group": "Quickstart",
           "pages": [
-            "backends/datadog",
-            "backends/prometheus",
-            "backends/tempo",
-            "backends/grafanacloud",
-            "backends/honeycomb",
-            "backends/newrelic",
-            "backends/splunk",
-            "backends/lightstep",
-            "backends/jaeger",
-            "backends/qryn",
-            "backends/loki",
-            "backends/elasticsearch",
-            "backends/googlecloud",
-            "backends/gcs",
-            "backends/azureblob",
-            "backends/opsverse",
-            "backends/logzio",
-            "backends/sentry",
-            "backends/signoz",
-            "backends/opentelemetry"
+            "intro",
+            "installation",
+            "instrumenting",
+            "viewing",
+            "next-steps"
           ]
-        },
-        "cleanup"
+        }
+      ]
+    },
+    {
+      "group": "Observability Backends",
+      "pages": [
+        "backends/datadog",
+        "backends/prometheus",
+        "backends/tempo",
+        "backends/grafanacloud",
+        "backends/honeycomb",
+        "backends/newrelic",
+        "backends/splunk",
+        "backends/lightstep",
+        "backends/jaeger",
+        "backends/qryn",
+        "backends/loki",
+        "backends/elasticsearch",
+        "backends/googlecloud",
+        "backends/gcs",
+        "backends/azureblob",
+        "backends/opsverse",
+        "backends/logzio",
+        "backends/sentry",
+        "backends/signoz",
+        "backends/opentelemetry"
       ]
     },
     {

@@ -3,63 +3,41 @@ title: "Installation"
 sidebarTitle: "Installation"
 ---
 
-## Installing Odigos
+## Installing Odigos CLI
 
-The easiest way to install Odigos is to use the helm chart:
+Odigos CLI is the easiest way to install Odigos on your Kubernetes cluster. It
+is a single binary that can be installed on any Linux, MacOS or Windows machine.
+
+<Tabs>
+  <Tab title="Homebrew">
+    If you are on MacOS, you can install Odigos CLI using Homebrew:
+
+    ```bash
+    brew install keyval-dev/homebrew-odigos-cli/odigos
+    ```
+  </Tab>
+  <Tab title="GitHub Releases">
+    Download the latest release from the [GitHub Releases](https://github.com/keyval-dev/odigos/releases)
+    page and extract the binary to a directory in your `PATH`.
+
+  </Tab>
+</Tabs>
+
+## Installing Odigos on Kubernetes
+
+To install Odigos on your Kubernetes cluster, run the following command:
 
 ```bash
-helm repo add odigos https://keyval-dev.github.io/odigos-charts/
-helm install my-odigos odigos/odigos --namespace odigos-system --create-namespace
+odigos install
 ```
 
-After all the pods in the odigos-system namespace are running, open the Odigos
-UI by running the following command:
+## Accessing Odigos UI
+
+After Odigos is installed, open the Odigos UI by running the following
+command:
 
 ```bash
-kubectl port-forward svc/odigos-ui 3000:3000 -n odigos-system
+odigos ui
 ```
 
-And navigate to http://localhost:3000
-
-## Choosing target applications
-
-You should now see the following page:
-
-![](/images/setup_page.png)
-
-After Odigos detected all the applications in the cluster, choose the opt out
-option for applications instrumentation. Opt in mode is recommended when you
-want to have greater control over which applications are instrumented.
-
-## Choosing observability backend
-
-Odigos supports all the major observability backends, both open-source and commercial.
-Select the relevant backend for your use case below to connect it to Odigos.
-
-<Check>
-  **That's the last step!**. Within a few minutes, you should see your
-  application monitoring data in the selected backend.
-</Check>
-
-<CardGroup cols={4}>
-  <Card title="Datadog" href="/backends/datadog" />
-  <Card title="Honeycomb" href="/backends/honeycomb" />
-  <Card title="Splunk" href="/backends/splunk" />
-  <Card title="New Relic" href="/backends/newrelic" />
-  <Card title="Prometheus" href="/backends/prometheus" />
-  <Card title="Tempo" href="/backends/tempo" />
-  <Card title="Loki" href="/backends/loki" />
-  <Card title="Jaeger" href="/backends/jaeger" />
-  <Card title="Lightstep" href="/backends/lightstep" />
-  <Card title="Elasticsearch" href="/backends/elasticsearch" />
-  <Card title="Google Cloud Storage" href="/backends/gcs" />
-  <Card title="Google Cloud Monitoring" href="/backends/googlecloud" />
-  <Card title="Grafana Cloud" href="/backends/grafanacloud" />
-  <Card title="Azure Blob Storage" href="/backends/azureblob" />
-  <Card title="Sentry" href="/backends/sentry" />
-  <Card title="SigNoz" href="/backends/signoz" />
-  <Card title="Logz.io" href="/backends/logzio" />
-  <Card title="Qryn" href="/backends/qryn" />
-  <Card title="OpsVerse" href="/backends/opsverse" />
-  <Card title="OpenTelemetry" href="/backends/opentelemetry" />
-</CardGroup>
+By default, Odigos UI is available at http://localhost:3000.
